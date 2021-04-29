@@ -47,7 +47,7 @@ and run the following commands to load shapefile into postgres
 "c:\Program Files\PostgreSQL\13\bin\psql.exe" -U postgres -d spatial -f create_hydrology.sql
 
 
-## Steps I took to edit hydrology shapefile to have a better oceanfront
+## Steps I took to edit hydrology shapefile to have a better ocean front
 Setting up environment<br>
 1. Right click settings to ensure snapping and digitizing toolbars are available
 2. Right click hydrology layer and toggle editing to on (a pencil should appear over the symbology icon)
