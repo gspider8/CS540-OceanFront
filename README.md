@@ -44,6 +44,7 @@ del hydrology.*
 download and unzip hydrology-updated.zip into c:\temp\cs540\gis
 and run the following commands to load shapefile into postgres
 "c:\Program Files\PostgreSQL\13\bin\shp2pgsql.exe" -d -I -s 2236 -W "latin1" -g geom hydrology.shp volusia.gis_hydrology > create_hydrology.sql
+
 "c:\Program Files\PostgreSQL\13\bin\psql.exe" -U postgres -d spatial -f create_hydrology.sql
 
 
