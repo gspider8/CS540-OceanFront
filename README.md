@@ -10,7 +10,7 @@
 ## Dataset
 The datset is located in `*.zip`, this data can be joined to an existing table using Altkey.
 
-## Editing coastline to parcel edges
+## Steps to edit coastline to parcel edges
 Setting up environment<br>
 1. Right click settings to ensure snapping and digitizing toolbars are availiable
 2. Right click hydrology layer and toggle editing to on (a pencil should appear over the symbology icon)
