@@ -8,8 +8,35 @@
 ---
 
 ## How to Use this data
-The datset is located in `*.zip`, this data can be joined to an existing table using Altkey.
-  
+The datset is located in `ocean_front.zip`, this data can be joined to an existing table using Altkey.
+Additionally update your hydrology shape file which is in the zipped folder hydrology-updated.zip
+
+Code to add ocean_front field
+
+alter table volusia.parcel add column ocean_front integer;
+update volusia.parcel set ocean_front = 0;
+
+alter table volusia.sales_analysis add column ocean_front integer;
+update volusia.sales_analysis set ocean_front = 0;
+
+--download and unzip ocean_front.zip to C:\temp\cs540
+
+drop table if exists volusia.ocean_front_parcels;
+
+create table volusia.ocean_front_parcels (
+parid integer,
+ocean_front integer
+);
+
+copy volusia.ocean_front_parcels from to 'C:\temp\cs540\ocean_front.txt' WITH (FORMAT 'csv', DELIMITER E'\t', NULL '', HEADER);
+
+create index idx_ocean on volusia.ocean_front_parcels (parid);
+
+update volusia.parcel p set ocean_front=o.ocean_front from volusia.ocean_front_parcels o where p.parid=o.parid;
+
+update volusia.sales_analysis s set ocean_front=o.ocean_front from volusia.ocean_front_parcels o where s.parid=o.parid;
+
+
 
 ## Steps I took to edit hydrology shapefile to have a better oceanfront
 Setting up environment<br>
@@ -35,4 +62,5 @@ Delete points one by one since at least on my computer, QGIS struggles to delete
   -For future projects, a python script that runs the delete key every few seconds would be helpful to automate removal of uneeded points from old polygon<br><br>
 If you are a visual learner refer to PolygonEditingSampleVideo.mp4 to see a step-by-step recording
 
-  
+ ## Limitations
+ Parcels within a parcel on the coastline such as a condo building or individual units are not designated as ocean front. The analysis needed to correct this is beyond the scope of the course
