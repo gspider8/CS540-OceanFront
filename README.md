@@ -6,6 +6,7 @@
 **Description:** Volusia county oceanfront property identification<br>
 
 ---
+![](cs_540_ocean_front_1.png)
 
 ## How to Use this data
 The datset is located in `ocean_front.zip`, this data can be joined to an existing table using Altkey.
