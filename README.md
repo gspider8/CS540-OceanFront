@@ -6,7 +6,7 @@
 **Description:** Volusia county oceanfront property identification<br>
 
 ---
-![](cs_540_ocean_front_1.png)
+![](cs_540_ocean_front_1.PNG)
 
 ## How to Use this data
 The datset is located in `ocean_front.zip`, this data can be joined to an existing table using Altkey.
@@ -37,6 +37,14 @@ update volusia.parcel p set ocean_front=o.ocean_front from volusia.ocean_front_p
 
 update volusia.sales_analysis s set ocean_front=o.ocean_front from volusia.ocean_front_parcels o where s.parid=o.parid;
 
+To update hydrology layer, in command prompt
+cd c:\temp\cs540\gis
+del hydrology.*
+
+download and unzip hydrology-updated.zip into c:\temp\cs540\gis
+and run the following commands to load shapefile into postgres
+"c:\Program Files\PostgreSQL\13\bin\shp2pgsql.exe" -d -I -s 2236 -W "latin1" -g geom hydrology.shp volusia.gis_hydrology > create_hydrology.sql
+"c:\Program Files\PostgreSQL\13\bin\psql.exe" -U postgres -d spatial -f create_hydrology.sql
 
 
 ## Steps I took to edit hydrology shapefile to have a better oceanfront
