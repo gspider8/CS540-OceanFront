@@ -32,6 +32,6 @@ Notes:<br>
 Save regularly since QGIS will crash<br>
 Delete points one by one since at least on my computer, QGIS struggles to delete multiple points at once<br>
   -For future projects, a python script that runs the delete key every few seconds would be helpful to automate removal of uneeeded points from old polygon<br><br>
-For more information refer to video *.mp4
+If you are a visual learner refer to PolygonEditingSampleVideo.mp4 to see a step-by-step recording
 
   
