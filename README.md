@@ -1,8 +1,8 @@
 # CS540-OceanFront
 **Author:** Matthew Lehr<br>
-**Email:** `lehrm@my.erau.edu`<br>
 **Class:** CS 540, Spring 2021<br>
 **Professor:** Steven Lehr<br>
+**Institution:** Embry-Riddle Aeronautical University<br>
 **Description:** Volusia county oceanfront property identification<br>
 
 ---
